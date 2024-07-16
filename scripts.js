@@ -12,6 +12,7 @@ var currentOrder;
 
 function displayImages() {
     const board = document.getElementById("board");
+    turns=0
     board.innerHTML = "";
     for(var r=0 ; r<colums; r++){
         for(var c=0 ; c<colums; c++){
@@ -95,6 +96,7 @@ function ClickForPlay() {
             currentOrder = easyOrder.slice();
         }   
     // shuffleImages();
+    turns=0;
     displayImages();
 }
 function init() {
