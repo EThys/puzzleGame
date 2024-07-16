@@ -36,3 +36,42 @@ button{
 button:hover {
     transform: scale(1.1);
 }
+
+#difficulty{
+    border:none;
+    outline:none;
+    padding :16px 30px;
+    margin-top:1%;
+    background: #0c67ae;  
+    color:#fff;
+    font-size:16px;
+    cursor:pointer;
+    border-radius:40px;
+    appearance: none; /* Supprime l'apparence par défaut */
+    -moz-appearance: none; /* Firefox */
+    -webkit-appearance: none; /* Safari et Chrome */
+}
+#difficulty option {
+    cursor: pointer;
+    border-radius: 5px;
+    background: #ffffff;
+    color: #000000;
+    padding: 10px;
+}
+
+
+ .select-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+
+.select-wrapper::after {
+    content: '▼';
+    position: absolute;
+    top: 52%;
+    right: 15px;
+    transform: translateY(-50%);
+   
+    color: #fff;
+}

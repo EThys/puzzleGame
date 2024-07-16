@@ -3,9 +3,10 @@ var colums=3;
 var currTile;
 var  otherTile;
 var turns=0;
-var  imgSrc="assets/"
 var imgOrigin=["1","2","3","4","5","6","7","8",'9'];
-var imgOrder= ["1","2","8","4","6","9","7","3",'5'];
+var difficultOrder = ["1", "8", "7", "2", "4", "3", "6", "5", "9"];
+var mediumOrder = ["1", "2", "3", "4", "5", "6", "8", "7", "9"];
+var easyOrder = ["1", "2", "3", "4", "5", "6", "7", "9", "8"];
 var currentOrder;
 
 
@@ -77,12 +78,23 @@ function displayImages() {
     }    
 }
 
-function shuffleImages() {
-    currentOrder = imgOrigin.slice();
-    currentOrder.sort(() => Math.random() - 0.5);
+function shuffleImages(arr) {
+    return arr.sort(() => Math.random() - 0.5);
 }
 function ClickForPlay() {    
-    shuffleImages();
+
+    var difficulty = document.getElementById("difficulty").value;
+    console.log("ddddd",difficulty);
+        if (difficulty == "difficult") {
+            currentOrder = difficultOrder.slice();
+            console.log(currentOrder)
+        }
+        else if(difficulty == "medium") {
+            currentOrder = mediumOrder.slice();
+        }else {
+            currentOrder = easyOrder.slice();
+        }   
+    // shuffleImages();
     displayImages();
 }
 function init() {
